@@ -13,3 +13,17 @@ NODE_NUMER = {
     'Myoblast': 2,
     'Myofiber': 3,
 }
+
+# invariants get
+def get_cell_invariant(g, node_id: int):
+    """
+        获取节点不变量cell_type degree
+        return:tuple[int, tuple[int]]
+    """
+    node = g.nodes[node_id]
+    cell_type = node['cell_type']
+    degree = g.degree(node_id)
+    # invariants可扩展....
+
+    type_val = NODE_NUMER.get(cell_type, 9999)
+    return (type_val, tuple([degree]))  # 元组确保可哈希和比较

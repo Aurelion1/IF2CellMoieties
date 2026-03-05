@@ -13,7 +13,7 @@ CELL_TYPE_ENCODING = {
     'Myf': 3,       # 肌肉纤维
 }
 # 边类型
-EDGE_DICT = {
+EDGE_TYPE_ENCODING = {
     '->': 1,
     '--': 2,
     '-|': 3,

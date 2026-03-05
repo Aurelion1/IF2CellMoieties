@@ -8,12 +8,7 @@ import numpy as np
 from scipy.sparse import csr_matrix
 
 ####
-from utils import (get_cell_invariant, 
-                   find_all_cycles,
-                   extract_invariant_cycles,
-                   cycle_identifier,
-                   reduce_graph_by_cycles,
-)
+from utils import get_cell_invariant
 
 # validate_graph实现需要检查图是否包含必要属性，这个今晚补充
 ### Cell inchi类

@@ -339,7 +339,9 @@ def create_combined_graph(myofiber_objects: List[Any], MuSC_objects: List[Any]) 
             # 检查空间交集
             if _check_mask_intersection(mask_i, bbox_i, mask_j, bbox_j):
                 G.add_edge(id_i, id_j)
-                
+    for n in G.nodes:
+        if 'ref' in G.nodes[n]:
+            del G.nodes[n]['ref']
     return G
 
 

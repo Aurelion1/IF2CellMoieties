@@ -10,7 +10,7 @@ from dataclasses import dataclass, field
 from invariants import CellInvariantExtractor, CELL_TYPE_ENCODING, EDGE_TYPE_ENCODING
 import mmh3
 # 节点优先级，用于绘制有向边
-# 当前一共四种细胞，肌肉干细胞，增殖中的肌肉干细胞，成肌细胞，肌肉纤维
+# 当前一共四种细胞，肌肉干细胞，成肌细胞，肌肉纤维
 # 节点序号
 # 固定种子
 SEED = 42
@@ -22,10 +22,10 @@ def hash_iteration_input(binary_data: bytes, seed: int = SEED) -> int:
     
     Args:
         binary_data: 二进制编码的迭代输入
-        seed: 哈希种子（固定值确保可重复性）
+        seed: 哈希种子
         
     Returns:
-        int: 32 位无符号整数标识符 (0 到 2^32-1)
+        int: 32 位无符号整数标识符
     """
     hash_bytes = mmh3.hash_bytes(binary_data, seed=seed)
     identifier = int.from_bytes(hash_bytes, byteorder='little') & 0xffffffff
@@ -39,10 +39,10 @@ def encode_iteration_input_binary(
 ) -> bytes:
     """
     将迭代输入编码为二进制字节串
-    [iteration, identifier, (bond1, identifier1), ...]
+    
         
     Returns:
-        bytes: 二进制编码，长度为 8 + 8×len(neighbor_info) 字节
+        bytes: [iteration, identifier, (bond1, identifier1), ...]
     """
     binary_parts = []
     
