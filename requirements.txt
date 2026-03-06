@@ -1,0 +1,10 @@
+networkx~=2.8.8
+numpy~=1.26.0
+scipy~=1.10.1
+zlib~=1.2.13
+matplotlib~=3.9.0
+mmh3~=5.2.0
+scikit-image~=0.24.0
+opencv-python~=4.5.2.52
+pillow~=9.5.0
+tqdm~=4.67.1

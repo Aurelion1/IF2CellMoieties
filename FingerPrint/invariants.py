@@ -8,9 +8,9 @@ import networkx as nx
 import mmh3
 # 细胞类型编码（可配置）
 CELL_TYPE_ENCODING = {
-    'Musc': 1,      # 肌肉干细胞
-    'Myb': 2,       # 成肌细胞
-    'Myf': 3,       # 肌肉纤维
+    'MuSC': 1,      # 肌肉干细胞
+    'Myoblast': 2,       # 成肌细胞
+    'Myofiber': 3,       # 肌肉纤维
 }
 # 边类型
 EDGE_TYPE_ENCODING = {
